@@ -27,7 +27,7 @@ All Run Anything scripts should produce JSON that corresponds to the following e
 ## Start time and end time
 start_time and end_time are important fields as they define when your check started and stopped it's run. These must be set to unix epoch in **seconds**. If you do not set this value your check will be sent back in time to 1970. If you set this to a value in the future your check result will be discarded by our system.
 
-As an alternative to this field you may use the start_timestamp_ms and stop_timestamp_ms fields. If you use these fields your values should be in milliseconds rather than seconds. 
+As an alternative to this field you may use the start_timestamp_ms and end_timestamp_ms fields. If you use these fields your values should be in milliseconds rather than seconds. 
 
 **No matter which fields you use your values should be whole numbers**
 
