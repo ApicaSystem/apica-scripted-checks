@@ -2,6 +2,7 @@ package com.apicasystems.metricsdemo;
 
 import com.apicasystems.metricsdemo.model.JsonResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,11 +31,11 @@ public class Main {
         .connectTimeout(10000);
 
     var result = new JsonResult();
-    double startTime = System.currentTimeMillis() / 1000.0;
-    result.setStartTime(startTime);
+    long startTime = System.currentTimeMillis();
+    result.setStartTime(BigDecimal.valueOf(startTime));
     result.setCmd(List.of(url));
     final var httpResponse = callUrl(url);
-    double endTime = System.currentTimeMillis() / 1000.0;
+    long endTime = System.currentTimeMillis();
 
     Number duration = endTime - startTime;
     var metricsMap = new HashMap<String, Object>();
@@ -43,7 +44,7 @@ public class Main {
     metricsMap.put("header_count", httpResponse.getHeaders().size());
     metricsMap.put("duration", duration.intValue() * 1000);
 
-    result.setEndTime(endTime);
+    result.setEndTime(BigDecimal.valueOf(endTime));
     result.setReturncode(0L);
     result.setStdout("Stdout from java");
     result.setStderr("Stderr from java");
@@ -51,13 +52,7 @@ public class Main {
     result.setAdditionalProperties(new HashMap<>(Map.of("metrics", metricsMap)));
     result.setMessage("HTTP Call completed with status " + httpResponse.getStatusText());
 
-    Map<String, String> headers = new HashMap<>();
-
-    for (Header header : httpResponse.getHeaders().all()) {
-      headers.put(header.getName(), header.getValue());
-    }
-
-    result.getAdditionalProperties().put("headers", headers);
+    result.getAdditionalProperties().put("header_count", httpResponse.getHeaders().all().size());
     result.getAdditionalProperties().put("url", url);
     result.getAdditionalProperties().put("java", true);
 
@@ -70,6 +65,6 @@ public class Main {
   }
 
   private static void printResult(JsonResult result) throws Exception {
-    System.out.println(mapper.writeValueAsString(result));
+    System.out.print(mapper.writeValueAsString(result));
   }
 }

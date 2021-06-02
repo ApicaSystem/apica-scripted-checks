@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,8 +23,8 @@ public class JsonResult {
   @JsonProperty("stdout")
   private String stdout;
 
-  @JsonProperty("start_time")
-  private double startTime;
+  @JsonProperty("start_timestamp_ms")
+  private BigDecimal startTime;
 
   @JsonProperty("cmd")
   private List<String> cmd = new LinkedList<>();
@@ -31,8 +32,8 @@ public class JsonResult {
   @JsonProperty("value")
   private String value;
 
-  @JsonProperty("end_time")
-  private double endTime;
+  @JsonProperty("end_timestamp_ms")
+  private BigDecimal endTime;
 
   @JsonProperty("stderr")
   private String stderr;
