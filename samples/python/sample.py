@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-# ApicaRandom
 # Returns a random value between 1 and 200
-#
 import random
 import json
 import time
@@ -14,8 +12,8 @@ end_time = time.time()
 
 json_return = {
  "returncode": 0,
- "stdout": "StdOut from python3",
- "stderr": "StdErr from python3",
+ "stdout": "StdOut from python",
+ "stderr": "StdErr from python",
  "start_time": start_time,
  "end_time": end_time,
  "message": "Random Value: " + str_value,
@@ -24,3 +22,4 @@ json_return = {
  "python": True,
 }
 
+print(json.dumps(json_return))
