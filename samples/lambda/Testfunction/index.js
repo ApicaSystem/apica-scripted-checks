@@ -10,7 +10,7 @@ exports.handler = async (event) => {
      "end_time": end,
      "message": "Command message from lambda",
      "unit": "ms",
-     "value": Math.floor(Math.random() * (1000 - 50 + 1) + 50);,
+     "value": Math.floor(Math.random() * (1000 - 50 + 1) + 50),
      "javascript": true,
      "args": event,
     }
