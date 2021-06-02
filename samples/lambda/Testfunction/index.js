@@ -1,6 +1,5 @@
 exports.handler = async (event) => {
     
-    // TODO implement
     var start = Date.now() / 1000;
     var end = start + 1;
     var test = {
@@ -11,7 +10,7 @@ exports.handler = async (event) => {
      "end_time": end,
      "message": "Command message from lambda",
      "unit": "ms",
-     "value": "22",
+     "value": Math.floor(Math.random() * (1000 - 50 + 1) + 50);,
      "javascript": true,
      "args": event,
     }
