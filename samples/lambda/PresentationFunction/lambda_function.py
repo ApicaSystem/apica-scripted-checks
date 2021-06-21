@@ -7,7 +7,7 @@ from botocore.exceptions import ClientError
 
 
 def get_secret():
-    secret_name = "presentation/redis/password"
+    secret_name = "presentation/redis/authentication"
     region_name = "eu-central-1"
 
     # Create a Secrets Manager client
