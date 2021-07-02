@@ -8,9 +8,7 @@ var test = {
  "end_time": end,
  "message": "Command message from javascript",
  "unit": "ms",
- "value": "22",
- "javascript": true,
- "provided_args": process.argv.slice(2),
+ "value": "22"
 }
 
 console.log(JSON.stringify(test));
