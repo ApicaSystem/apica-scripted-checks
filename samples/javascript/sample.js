@@ -8,7 +8,8 @@ var test = {
  "end_time": end,
  "message": "Command message from javascript",
  "unit": "ms",
- "value": "22"
+ "value": "22",
+ "test": true
 }
 
 console.log(JSON.stringify(test));
