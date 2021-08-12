@@ -7,7 +7,7 @@ var test = {
  "start_time": start,
  "end_time": end,
  "message": "Command message from javascript",
- "unit": "ms",
+ "unit": "%",
  "value": "22",
  "test": true
 }
