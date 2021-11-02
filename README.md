@@ -24,8 +24,8 @@ All Run Anything scripts should produce JSON that corresponds to the following e
 ```
 
 # JSON Restrictions
-## Keys with dots
-Keys with dots are not currently allowed. Results with these keys will be discarded by our system. We may implement a replacement system where dots are replaced with another character.
+## Keys with dots (.) or dollar signs ($)
+Keys with these characters are not currently allowed. Results with these keys will be discarded by our system. We may implement a replacement system where these are replaced with another character.
 
 
 # Important Fields
