@@ -23,6 +23,11 @@ All Run Anything scripts should produce JSON that corresponds to the following e
 }
 ```
 
+# JSON Restrictions
+## Keys with dots
+Keys with dots are not currently allowed. Results with these keys will be discarded by our system. We may implement a replacement system where dots are replaced with another character.
+
+
 # Important Fields
 ## Start time and end time
 start_time and end_time are important fields as they define when your check started and stopped it's run. These must be set to unix epoch in **seconds**. If you do not set this value your check will be sent back in time to 1970. If you set this to a value in the future your check result will be discarded by our system.
