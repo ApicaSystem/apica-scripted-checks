@@ -8,11 +8,9 @@ All Run Anything scripts should produce JSON that corresponds to the following e
 ```json
 {
   "returncode":0,
-  "stdout":"Stdout from java",
   "start_time":1622120634,
   "value":"0",
   "end_time":1622120638,
-  "stderr":"Stderr from java",
   "message":"HTTP Call completed with status OK",
   "metrics":{
     "duration":0,
