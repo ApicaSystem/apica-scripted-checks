@@ -38,11 +38,9 @@ response = requests.post(url, params=params, headers=headers, json=json_payload)
 end = time.time()
 
 uptime_ratio = int(response.get('uptime_ratio'))
-severity = 'I'
 return_code = 0
 
 if uptime_ratio < 60:
-    severity = 'F'
     return_code = 1
 
 print(json.dumps({
@@ -51,7 +49,11 @@ print(json.dumps({
     'value': int(uptime_ratio),
     'message': 'Business composite check has result: ' + str(uptime_ratio),
     'returncode': return_code,
-    'included_tags': tags + crit_tags
+    'included_tags': tags + crit_tags,
+    'response': response,
+    'metrics': {
+        'uptime_score': response.get('uptime_score'),
+        'downtime_score': response.get('downtime_score'),
+        'stale_checks': response.get('checks_stale')
+    }
 }))
-
-
