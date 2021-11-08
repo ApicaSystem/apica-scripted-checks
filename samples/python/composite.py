@@ -10,6 +10,7 @@ parse.add_argument('-a', '--auth-ticket')
 args = parse.parse_args()
 
 tags = str(args.tags).split(',')
+crit_tags = []
 
 json_payload = {
     "check_tags": {
@@ -50,6 +51,7 @@ print(json.dumps({
     'value': int(uptime_ratio),
     'message': 'Business composite check has result: ' + str(uptime_ratio),
     'returncode': return_code,
+    'included_tags': tags + crit_tags
 }))
 
 
