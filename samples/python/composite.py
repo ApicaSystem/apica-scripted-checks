@@ -52,8 +52,8 @@ print(json.dumps({
     'included_tags': tags + crit_tags,
     'response': response,
     'metrics': {
-        'uptime_score': response.get('uptime_score'),
-        'downtime_score': response.get('downtime_score'),
+        'uptime_score': int(response.get('uptime_score')),
+        'downtime_score': int(response.get('downtime_score')),
         'stale_checks': response.get('checks_stale')
     }
 }))
