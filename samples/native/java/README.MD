@@ -1,4 +1,4 @@
-# Run Anything Example Java Project
+# Scripted Checks Example Java Project
 
 You may reuse the src/main/java/com/apicasystems/metricsdemo/model/JsonResult class for easy integration into your own projects (check pom.xml for dependencies).
 
