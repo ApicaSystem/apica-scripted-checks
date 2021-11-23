@@ -3,7 +3,7 @@
 See samples directory for java, javascript, and python samples.
 
 
-All Run Anything scripts should produce JSON that corresponds to the following example:
+All scripts should produce JSON that corresponds to the following example:
 
 ```json
 {
